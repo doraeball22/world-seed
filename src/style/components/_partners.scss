@@ -1,0 +1,22 @@
+/* --------------------------------
+   partners
+-------------------------------- */
+
+.partners
+{
+	@extend %text-center;
+
+	&__inner
+	{
+		margin-bottom: -30px;
+		overflow: hidden;
+	}
+
+	img
+	{
+		@extend %display-inline-block;
+		@extend %v-top;
+		line-height: 1;
+		margin-bottom: 30px;
+	}
+}

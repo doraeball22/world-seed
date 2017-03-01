@@ -1,0 +1,42 @@
+/* --------------------------------
+   custom bootstrap styles
+-------------------------------- */
+
+html { font-size: $base-font-size; }
+
+body
+{
+	line-height: 1.538;
+	font:
+	{
+		size: rem-calc(15px);
+		weight: 500;
+		family: $primary-fontFamily;
+	};
+	color: #777;
+}
+
+.container,
+.container-fluid
+{
+	@extend %pos-relative;
+}
+
+// @media (min-width: 1200px) {
+// 	.container { width: 1200px; }
+// }
+
+.row-no-gutter
+{
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.row-no-gutter > [class^="col-"],
+.row-no-gutter > [class*=" col-"],
+.col-no-gutter[class*='col-'],
+.col-no-gutter[class*=" col-"]
+{
+	padding-right:0;
+	padding-left:0;
+}

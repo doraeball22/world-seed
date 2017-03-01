@@ -1,0 +1,156 @@
+/* --------------------------------
+   products
+-------------------------------- */
+
+.products
+{
+	@extend %pos-relative;
+	@extend %text-center;
+
+	&__inner { }
+}
+
+.product__item
+{
+	&--text
+	{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	&--image {}
+
+	&__ico
+	{
+		@extend %display-inline-block;
+		@extend %v-top;
+
+		&:before
+		{
+			content: "";
+			@extend %display-inline-block;
+			@extend %v-middle;
+			@extend %bg-ico;
+			height: 51px;
+		}
+
+		&--1:before
+		{
+			width: 50px;
+			background-image: url(../img/ico/ico_1.png);
+		}
+
+		&--2:before
+		{
+			width: 52px;
+			background-image: url(../img/ico/ico_2.png);
+		}
+
+		&--3:before
+		{
+			width: 63px;
+			background-image: url(../img/ico/ico_3.png);
+		}
+
+		&--4:before
+		{
+			width: 57px;
+			background-image: url(../img/ico/ico_4.png);
+		}
+
+		&--5:before
+		{
+			width: 55px;
+			background-image: url(../img/ico/ico_5.png);
+		}
+	}
+
+	&__title { font-weight: 500; }
+}
+
+.products--style-2
+{
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	.product__item
+	{
+		figure
+		{
+			@extend %pos-relative;
+			padding-top: percentage(340/520);
+			background-color: $primary-color;
+
+			img
+			{
+				@extend %block-absolute--full;
+				@extend %bg-cover;
+				opacity: .5;
+			}
+		}
+
+		&__description
+		{
+			@extend %block-absolute--full;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-left: 15px;
+			padding-right: 15px;
+			@extend %text-left;
+			color: $white;
+
+			&__inner
+			{
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				max-width: 360px;
+			}
+		}
+
+		&__title
+		{
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $white;
+		}
+	}
+}
+
+@include min-screen($sm-width)
+{
+	.product__item
+	{
+		&--text
+		{
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+}
+
+@include min-screen($md-width)
+{
+	.products
+	{
+		.row
+		{
+			&:nth-of-type(2n) { flex-direction: row-reverse; }
+		}
+	}
+}
+
+@include min-screen($lg-width)
+{
+	.products--style-2
+	{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+@include min-screen($xl-width)
+{
+
+}
